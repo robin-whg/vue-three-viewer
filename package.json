@@ -32,7 +32,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prepublishOnly": "$npm_execpath build"
   },
   "dependencies": {
     "three": "^0.131.3",
