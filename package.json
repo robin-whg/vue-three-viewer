@@ -1,6 +1,34 @@
 {
   "name": "three-viewer",
   "version": "0.0.0",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/three-viewer.umd.min.js",
+  "module": "dist/three-viewer.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/three-viewer.es.js",
+      "require": "./dist/three-viewer.umd.js"
+    }
+  },
+  "author": "robin-whg",
+  "license": "MIT",
+  "description": "Vue component to easily display 3D models with ThreeJS.",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robin-whg/three-viewer"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "three",
+    "threejs",
+    "3d",
+    "gltf"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
