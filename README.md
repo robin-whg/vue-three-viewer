@@ -1,4 +1,4 @@
-# THREE VIEWER
+# VUE THREE VIEWER
 
 An unstyled Vue 3 component to show GTLF files in the browser. (No Vue 2 support)
 
