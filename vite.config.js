@@ -13,8 +13,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.js"),
-      name: "three-viewer",
-      fileName: (format) => `three-viewer.${format}.js`,
+      name: "vue-three-viewer",
+      fileName: (format) => `vue-three-viewer.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

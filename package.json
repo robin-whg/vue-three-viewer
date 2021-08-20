@@ -1,16 +1,16 @@
 {
-  "name": "three-viewer",
+  "name": "vue-three-viewer",
   "version": "0.0.0",
   "private": false,
   "files": [
     "dist"
   ],
-  "main": "dist/three-viewer.umd.min.js",
-  "module": "dist/three-viewer.es.js",
+  "main": "dist/vue-three-viewer.umd.min.js",
+  "module": "dist/vue-three-viewer.es.js",
   "exports": {
     ".": {
-      "import": "./dist/three-viewer.es.js",
-      "require": "./dist/three-viewer.umd.js"
+      "import": "./dist/vue-three-viewer.es.js",
+      "require": "./dist/vue-three-viewer.umd.js"
     }
   },
   "author": "robin-whg",
@@ -19,7 +19,7 @@
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robin-whg/three-viewer"
+    "url": "https://github.com/robin-whg/vue-three-viewer"
   },
   "keywords": [
     "vue",
