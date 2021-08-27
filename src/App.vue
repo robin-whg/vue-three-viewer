@@ -1,13 +1,13 @@
 <template>
   <div class="flex">
-    <viewport class="h-96 w-96" :hdr="hdr" :models="models3">
+    <viewport class="h-96 w-96" :hdr="hdr" :models="models">
       <div class="h-96 w-96 flex items-center justify-center">loading</div>
     </viewport>
   </div>
 </template>
 
 <script>
-import Viewport from "../dist/three-viewer.es.js";
+import Viewport from "./components/Viewport.vue";
 
 export default {
   components: {
