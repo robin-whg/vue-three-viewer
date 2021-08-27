@@ -4,10 +4,10 @@
 </template>
 
 <script>
-import { toRefs, ref, onMounted } from "vue";
 import { useViewport } from "@/use/viewport";
 
 export default {
+  name: "Viewport",
   props: {
     hdr: {
       type: String,
@@ -15,29 +15,32 @@ export default {
     },
     models: {
       type: Array,
+      required: true,
     },
   },
-  setup(props) {
-    const { hdr, models } = toRefs(props);
-    const canvas = ref(null);
-    const isLoading = ref(false);
-
-    onMounted(async () => {
+  data() {
+    return {
+      isLoading: false,
+    };
+  },
+  async mounted() {
+    await this.init();
+  },
+  methods: {
+    async init() {
       const { scene, loadHdr, loadModel, frameObject } = useViewport(
-        canvas.value
+        this.$refs.canvas
       );
-      isLoading.value = true;
-      await loadHdr(hdr.value);
+      this.isLoading = true;
+      await loadHdr(this.hdr);
       await Promise.all(
-        models.value.map(async (uri) => {
+        this.models.map(async (uri) => {
           await loadModel(uri);
         })
       );
       frameObject(scene);
-      isLoading.value = false;
-    });
-
-    return { canvas, isLoading };
+      this.isLoading = false;
+    },
   },
 };
 </script>
