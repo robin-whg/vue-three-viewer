@@ -15,7 +15,11 @@ export default {
     },
     models: {
       type: Array,
-      required: true,
+      required: false,
+    },
+    model: {
+      type: String,
+      requried: false,
     },
   },
   data() {
@@ -33,11 +37,16 @@ export default {
       );
       this.isLoading = true;
       await loadHdr(this.hdr);
-      await Promise.all(
-        this.models.map(async (uri) => {
-          await loadModel(uri);
-        })
-      );
+      if (this.model) {
+        await loadModel(this.model);
+      }
+      if (this.models) {
+        await Promise.all(
+          this.models.map(async (uri) => {
+            await loadModel(uri);
+          })
+        );
+      }
       frameObject(scene);
       this.isLoading = false;
     },
